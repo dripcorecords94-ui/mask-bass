@@ -1,0 +1,55 @@
+windows	Build	﻿2026-11-21T10:41:09.4106377Z ##[group]Run cmake --build build --config Release --parallel
+windows	Build	2026-11-21T10:41:09.4106953Z ^[[36;1mcmake --build build --config Release --parallel^[[0m
+windows	Build	2026-11-21T10:41:09.4180028Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+windows	Build	2026-11-21T10:41:09.4180384Z ##[endgroup]
+windows	Build	2026-11-21T10:41:09.8384654Z MSBuild version 18.12.2-1.26514.2+04f6ca984 for .NET Framework
+windows	Build	2026-11-21T10:41:09.8776773Z 
+windows	Build	2026-11-21T10:41:10.1141850Z   Checking File Globs
+windows	Build	2026-11-21T10:41:10.3972992Z   1>Checking Build System
+windows	Build	2026-11-21T10:41:10.6293954Z   Generating MaskBass_artefacts/JuceLibraryCode/MaskBass_resources.rc
+windows	Build	2026-11-21T10:41:10.6559509Z   Building Custom Rule D:/a/mask-bass/mask-bass/CMakeLists.txt
+windows	Build	2026-11-21T10:41:10.9071541Z   MaskBass_rc_lib.vcxproj -> D:\a\mask-bass\mask-bass\build\MaskBass_rc_lib.dir\Release\MaskBass_rc_lib.lib
+windows	Build	2026-11-21T10:41:11.0626734Z   Building Custom Rule D:/a/mask-bass/mask-bass/CMakeLists.txt
+windows	Build	2026-11-21T10:41:11.1453727Z   Generating MaskBass_artefacts/JuceLibraryCode/JuceHeader.h
+windows	Build	2026-11-21T10:41:11.1808360Z   Building Custom Rule D:/a/mask-bass/mask-bass/CMakeLists.txt
+windows	Build	2026-11-21T10:41:11.2320742Z   juce_VST3ManifestHelper.cpp
+windows	Build	2026-11-21T10:41:11.3858877Z   PluginProcessor.cpp
+windows	Build	2026-11-21T10:41:11.3913523Z   PluginEditor.cpp
+windows	Build	2026-11-21T10:41:11.3921273Z   juce_audio_processors.cpp
+windows	Build	2026-11-21T10:41:11.4423210Z   juce_audio_processors_ara.cpp
+windows	Build	2026-11-21T10:41:11.4754775Z   juce_audio_processors_lv2_libs.cpp
+windows	Build	2026-11-21T10:41:11.5411984Z   juce_gui_extra.cpp
+windows	Build	2026-11-21T10:41:17.6241219Z D:\a\mask-bass\mask-bass\Source\PluginEditor.cpp(19,6): error C2872: 'LookAndFeel': ambiguous symbol [D:\a\mask-bass\mask-bass\build\MaskBass.vcxproj]
+windows	Build	2026-11-21T10:41:17.6958503Z       D:\a\mask-bass\mask-bass\build\_deps\juce-src\modules\juce_gui_basics\lookandfeel\juce_LookAndFeel.h(88,17):
+windows	Build	2026-11-21T10:41:17.7323640Z       could be 'juce::LookAndFeel'
+windows	Build	2026-11-21T10:41:17.7672803Z       D:\a\mask-bass\mask-bass\Source\PluginEditor.h(31,11):
+windows	Build	2026-11-21T10:41:17.8148443Z       or       'mbui::LookAndFeel'
+windows	Build	2026-11-21T10:41:17.8665581Z   
+windows	Build	2026-11-21T10:41:17.9162491Z D:\a\mask-bass\mask-bass\Source\PluginEditor.cpp(19,19): error C2509: 'drawRotarySlider': member function not declared in 'juce::LookAndFeel' [D:\a\mask-bass\mask-bass\build\MaskBass.vcxproj]
+windows	Build	2026-11-21T10:41:17.9564216Z       D:\a\mask-bass\mask-bass\build\_deps\juce-src\modules\juce_gui_basics\lookandfeel\juce_LookAndFeel.h(88,17):
+windows	Build	2026-11-21T10:41:17.9903316Z       see declaration of 'juce::LookAndFeel'
+windows	Build	2026-11-21T10:41:18.0312530Z   
+windows	Build	2026-11-21T10:41:18.0802179Z D:\a\mask-bass\mask-bass\Source\PluginEditor.cpp(53,6): error C2872: 'LookAndFeel': ambiguous symbol [D:\a\mask-bass\mask-bass\build\MaskBass.vcxproj]
+windows	Build	2026-11-21T10:41:18.1207852Z       D:\a\mask-bass\mask-bass\build\_deps\juce-src\modules\juce_gui_basics\lookandfeel\juce_LookAndFeel.h(88,17):
+windows	Build	2026-11-21T10:41:18.1634901Z       could be 'juce::LookAndFeel'
+windows	Build	2026-11-21T10:41:18.2111919Z       D:\a\mask-bass\mask-bass\Source\PluginEditor.h(31,11):
+windows	Build	2026-11-21T10:41:18.2510739Z       or       'mbui::LookAndFeel'
+windows	Build	2026-11-21T10:41:18.2936316Z   
+windows	Build	2026-11-21T10:41:18.3345258Z D:\a\mask-bass\mask-bass\Source\PluginEditor.cpp(53,19): error C2509: 'drawLinearSlider': member function not declared in 'juce::LookAndFeel' [D:\a\mask-bass\mask-bass\build\MaskBass.vcxproj]
+windows	Build	2026-11-21T10:41:18.3902805Z       D:\a\mask-bass\mask-bass\build\_deps\juce-src\modules\juce_gui_basics\lookandfeel\juce_LookAndFeel.h(88,17):
+windows	Build	2026-11-21T10:41:18.4556406Z       see declaration of 'juce::LookAndFeel'
+windows	Build	2026-11-21T10:41:18.4912520Z   
+windows	Build	2026-11-21T10:41:18.5328825Z   juce_gui_basics.cpp
+windows	Build	2026-11-21T10:41:21.8750647Z   juce_graphics.cpp
+windows	Build	2026-11-21T10:41:22.3824407Z   juce_graphics_Harfbuzz.cpp
+windows	Build	2026-11-21T10:41:23.9504315Z   juce_vst3_helper.vcxproj -> D:\a\mask-bass\mask-bass\build\Release\juce_vst3_helper.exe
+windows	Build	2026-11-21T10:41:25.4305381Z   juce_events.cpp
+windows	Build	2026-11-21T10:41:29.5991205Z   juce_core.cpp
+windows	Build	2026-11-21T10:41:34.3386008Z   juce_core_CompilationTime.cpp
+windows	Build	2026-11-21T10:41:34.4062464Z   juce_data_structures.cpp
+windows	Build	2026-11-21T10:41:35.2446839Z   juce_audio_basics.cpp
+windows	Build	2026-11-21T10:41:36.2624783Z   juce_audio_utils.cpp
+windows	Build	2026-11-21T10:41:37.2939525Z   juce_audio_formats.cpp
+windows	Build	2026-11-21T10:41:37.6049412Z   juce_audio_devices.cpp
+windows	Build	2026-11-21T10:41:39.8298149Z   juce_dsp.cpp
+windows	Build	2026-11-21T10:41:44.7151476Z ##[error]Process completed with exit code 1.

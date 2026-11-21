@@ -16,7 +16,7 @@ void mbui::drawPill (juce::Graphics& g, juce::Rectangle<float> r, const juce::St
 }
 
 // ---------------------------------------------------------------- LookAndFeel
-void LookAndFeel::drawRotarySlider (juce::Graphics& g, int x, int y, int w, int h, float pos,
+void MaskLookAndFeel::drawRotarySlider (juce::Graphics& g, int x, int y, int w, int h, float pos,
                                     float start, float end, juce::Slider&)
 {
     auto b = juce::Rectangle<int> (x, y, w, h).toFloat().reduced (4.f);
@@ -50,7 +50,7 @@ void LookAndFeel::drawRotarySlider (juce::Graphics& g, int x, int y, int w, int 
     g.fillEllipse (c.x + dx * pr - 7.f, c.y + dy * pr - 7.f, 14.f, 14.f);
 }
 
-void LookAndFeel::drawLinearSlider (juce::Graphics& g, int x, int y, int w, int h, float sliderPos,
+void MaskLookAndFeel::drawLinearSlider (juce::Graphics& g, int x, int y, int w, int h, float sliderPos,
                                     float, float, juce::Slider::SliderStyle, juce::Slider&)
 {
     auto b = juce::Rectangle<float> ((float) x, (float) y, (float) w, (float) h);
