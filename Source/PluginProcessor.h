@@ -36,6 +36,11 @@ public:
     std::atomic<float> uiPhase { 0.f };
     std::atomic<bool>  uiActive { false };
 
+    // forma de onda de entrada para la pantalla
+    static constexpr int kScope = 300;
+    std::array<std::atomic<float>, kScope> scope;
+    std::atomic<int> scopeWrite { 0 };
+
 private:
     static juce::AudioProcessorValueTreeState::ParameterLayout createLayout();
 
@@ -47,6 +52,8 @@ private:
     float  smoothedGain = 1.f, smoothCoef = 0.01f;
     float  env = 0.f, envRelease = 0.999f;
     bool   armed = true;
+    float  scopePeak = 0.f;
+    int    scopeCount = 0;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MaskBassProcessor)
 };

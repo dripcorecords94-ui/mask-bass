@@ -38,6 +38,7 @@ MaskBassProcessor::MaskBassProcessor()
     pListen = apvts.getRawParameterValue ("listen");
     pCurve  = apvts.getRawParameterValue ("curve");
     pThresh = apvts.getRawParameterValue ("thresh");
+    for (auto& v : scope) v.store (0.f);
 }
 
 void MaskBassProcessor::prepareToPlay (double sr, int blockSize)
@@ -105,6 +106,7 @@ void MaskBassProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::Mi
     const double cycleBeats = kRateBeats[rate];
     const double cycleSamples = cycleBeats / beatsPerSample;
     const double minGap = 0.02 * sr;
+    const int scopeInterval = juce::jmax (1, (int) (0.012 * sr));
 
     // --- disparos MIDI ---
     int midiTrig[128]; int nMidi = 0, midiIdx = 0;
@@ -151,6 +153,17 @@ void MaskBassProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::Mi
             const double ph = samplesSinceTrigger / cycleSamples;
             if (ph < 1.0) { lastPhase = (float) ph; g = mb::curveValue (curve, lastPhase); active = true; }
             samplesSinceTrigger += 1.0;
+        }
+
+        // pantalla: pico de la entrada (antes del efecto)
+        for (int c = 0; c < numCh; ++c) scopePeak = juce::jmax (scopePeak, std::abs (ch[c][i]));
+        if (++scopeCount >= scopeInterval)
+        {
+            const int w = scopeWrite.load();
+            scope[(size_t) w].store (scopePeak);
+            scopeWrite.store ((w + 1) % kScope);
+            scopePeak = 0.f;
+            scopeCount = 0;
         }
 
         const float duck = 1.f - mix * (1.f - g);

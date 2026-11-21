@@ -4,11 +4,13 @@
 
 namespace mbui
 {
-    inline const juce::Colour kBg     { 0xff1b1b1b };
-    inline const juce::Colour kPanel  { 0xff0e0e0e };
-    inline const juce::Colour kYellow { 0xffffe033 };
-    inline const juce::Colour kCell   { 0xff2a2a2a };
-    inline const juce::Colour kGrey   { 0xff8c8c8c };
+    inline const juce::Colour kBg        { 0xff151518 };
+    inline const juce::Colour kPanel     { 0xff0b0b0d };
+    inline const juce::Colour kAccent    { 0xffa43dff };   // morado principal
+    inline const juce::Colour kAccentHi  { 0xffc98bff };   // morado claro
+    inline const juce::Colour kAccentDim { 0xff5b2a8a };   // morado oscuro
+    inline const juce::Colour kCell      { 0xff141417 };
+    inline const juce::Colour kGrey      { 0xff8c8c96 };
 
     void drawPill (juce::Graphics&, juce::Rectangle<float>, const juce::String&, bool on, bool over, bool fillOff);
 
@@ -28,9 +30,10 @@ namespace mbui
         void setOn (bool v) { if (on != v) { on = v; repaint(); } }
     };
 
-    class MaskLookAndFeel : public juce::LookAndFeel_V4
+    class LookAndFeel : public juce::LookAndFeel_V4
     {
     public:
+        int getSliderThumbRadius (juce::Slider&) override { return 10; }
         void drawRotarySlider (juce::Graphics&, int x, int y, int w, int h, float pos,
                                float startAngle, float endAngle, juce::Slider&) override;
         void drawLinearSlider (juce::Graphics&, int x, int y, int w, int h, float sliderPos,
@@ -81,7 +84,7 @@ public:
 
 private:
     MaskBassProcessor& proc;
-    mbui::MaskLookAndFeel laf;
+    mbui::LookAndFeel laf;
 
     juce::Slider mix, xover, thresh;
     mbui::ChoiceGroup rate, mode;
