@@ -6,3 +6,7 @@ build-aax/
 descargas/
 *.exp
 *.lib
+
+error.txt
+log.txt
+*.zip
