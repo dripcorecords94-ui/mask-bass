@@ -30,7 +30,7 @@ namespace mbui
         void setOn (bool v) { if (on != v) { on = v; repaint(); } }
     };
 
-    class LookAndFeel : public juce::LookAndFeel_V4
+    class MaskLookAndFeel : public juce::LookAndFeel_V4
     {
     public:
         int getSliderThumbRadius (juce::Slider&) override { return 10; }
@@ -84,7 +84,7 @@ public:
 
 private:
     MaskBassProcessor& proc;
-    mbui::LookAndFeel laf;
+    mbui::MaskLookAndFeel laf;
 
     juce::Slider mix, xover, thresh;
     mbui::ChoiceGroup rate, mode;
